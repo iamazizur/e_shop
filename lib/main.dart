@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: Products(),
+    return ChangeNotifierProvider(
+      // value: Products(),
+      create: (context) => Products(),
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            primarySwatch: Colors.purple, accentColor: Colors.deepOrange),
+        theme: ThemeData(primarySwatch: Colors.purple),
         home: ProducOverviewScreen(),
         routes: {
           ProductDetailScreen.routeName: (context) =>
